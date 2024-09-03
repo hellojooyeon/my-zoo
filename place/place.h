@@ -1,0 +1,10 @@
+enum EPlaceType{
+    CONVENIENCE,
+    INSIDE_CAGE,
+    OUTSIDE_CAGE,
+    INFORMATION_DESK,
+    TICKET_OFFICE,
+    ENTRANCE,
+    PARKING_LOT,
+    TOILET,
+}
