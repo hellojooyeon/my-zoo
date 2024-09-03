@@ -2,14 +2,14 @@
 #include <iostream>;
 
 using namespace std;
-class AnimalElephant : public AAnimal {
+class AnimalShark: public AAnimal {
 public:
-    AnimalElephant(
+	AnimalShark(
 		int sex,
 		string name,
 		string sound,
 		int legNums);
 
 	void move(string action) override;
-	~AnimalElephant();
+	~AnimalShark();
 };

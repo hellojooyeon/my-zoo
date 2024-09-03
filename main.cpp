@@ -1,7 +1,13 @@
 #include <iostream>
+#include "zoo.h";
 
 using namespace std;
 
 int main() {
-	cout << "hello";
+	Zoo myZoo;
+
+	myZoo.printInfo();
+
+
+	cout << "================================»èÁ¦================================" << endl;
 }

@@ -1,14 +1,29 @@
-#include "./movable.h";
-#include "string.h";
+#include <iostream>;
+#include <string>;
+#include "person.h";
 
-class Employee: Movable{
-    private:
-    EPlaceType workspace;
-    string[] jobs;
+using namespace std;
+class Employee : public APerson {
+    
+public:
+    string job;
+    bool isWorking;
 
-    public:
-    Employee(EPlaceType workspace, string[] jobs);
-    string[] queryJobs();
-    virtual string getCurPosition() override;
+    Employee();
+    Employee(
+        string name,
+        int sex,
+        string job,
+        bool isWorking
+    );
 
-}
+    string getJob();
+    bool getIsWorking();
+
+    void startWork();
+    void stopWork();
+
+    void move(string action) override;
+
+    ~Employee();
+};

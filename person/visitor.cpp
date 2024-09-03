@@ -1,49 +1,19 @@
 #include "visitor.h";
 
-Visitor::Visitor(int age, int cash){
-    this->age = age;
-    this->cash = case;
+Visitor::Visitor() : APerson(), age(30), ticket(true) {};
+Visitor::Visitor(string name, int sex, int age, bool hasTicket) : APerson(name, sex), age(age), ticket(hasTicket) {};
 
-    this->curPosition = EPlaceType.ENTRANCE;
-    
-    this->m_availabeVisitPlaces = [
-        EPlaceType.CONVENIENCE,
-    EPlaceType.OUTSIDE_CAGE,
-    EPlaceType.INFORMATION_DESK,
-    EPlaceType.TICKET_OFFICE,
-    EPlaceType.ENTRANCE,
-    EPlaceType.PARKING_LOT,
-    EPlaceType.TOILET,
-    ];
-
-};
-
-bool Visitor::getHasTicket(){
-    return this->hasTicket;
+bool Visitor::hasTicket() {
+	return ticket;
 }
 
-bool Visitor::enterZoo(){
-    if(this->hasTicket){
-        return true;
-    }
+int Visitor::getAge() {
+	return age;
 }
 
-void Visitor::exitFromZoo(){
-    this->hasTicket = false;
+void Visitor::move(string action) {
+	cout << "Visitor [" << name << "] move: " << action << endl;
 }
-
-EPlaceType Visitor::getCurPosition(){
-    return this->curPosition;
-}
-
-void Visitor::move(EPlaceType dst){
-    if(!this->hasTicket){
-        cout<<"티켓이 없어 입장 불가"<<endl;
-        return;
-    }
-    if(this->isMovable(dst)){
-        cout << "이동합니다"<<endl;
-        this->curPosition = dst;
-        return;
-    }
+Visitor::~Visitor() {
+	cout << "Visitor delete" << endl;
 }

@@ -1,27 +1,34 @@
-enum EAnimal{
-    ELEPHANT,
-    TIGER,
-    BEAR,
-    GIRAFFE,
-}
+#ifndef ANIMA_H
+#define ANIMA_H
 
-enum EAnimalSex{
-    MALE,
-    FEMALE
-}
-class Animal{
-private:
-int age;
-EAnimalSex sex;
-EAnimal type;
-string prey;
+#include <string>;
+#include <iostream>;
+#include<cstdlib>
+#include "../interface/interfaceMove.h"
 
-    public:
-    Animal(
-        int age,
-        EAnimalSex sex,
-        EAnimal type,
-        string prey
-    );
-    void eat();
-}
+using namespace std;
+
+class AAnimal : public IMove {
+protected:
+	string name;
+	int sex;
+	string sound;
+	int legNums;
+public:
+	AAnimal();
+	AAnimal(
+		int sex,
+		string name,
+		string sound,
+		int legNums
+		);
+
+	int getSex();
+	string getName();
+	string getSound();
+	int getLegNums();
+	void doSound();
+	virtual void move(string action) override;
+	~AAnimal();
+};
+#endif

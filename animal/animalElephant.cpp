@@ -1,10 +1,11 @@
 #include "animalElephant.h";
 
+AnimalElephant::AnimalElephant(int sex, string name, string sound, int legNums) : AAnimal(sex, name, sound, legNums) {};
 
-AnimalElephant::AnimalElephant(int age,
-        EAnimalSex sex){
-            this->age = age;
-            this->sex=sex;
-            this->type = EAnimal.ELEPHANT;
-            this->prey = "건초";
+void AnimalElephant::move(string action) {
+	cout << "Elephant[" << name << "] 움직임: " << action << endl;
+};
+
+AnimalElephant::~AnimalElephant() {
+	cout << "AnimalElephant 삭제" << endl;
 }

@@ -1,21 +1,21 @@
-#include "./movable.h";
-#include "string.h";
-#include "../place/place.h";
+#ifndef VISITOR_H
+#define VISITOR_H
 
-class Visitor{
-    private:
-    int age;
-    bool hasTicket;
-    EPlaceType curPosition;
-    int cash;
-    public:
-    Visitor(int age, int cash);
+#include <string>;
+#include "person.h";
 
-    virtual void buyTicket() override;
-    bool getHasTicket();
-    void enterToZoo();
-    void exitFromZoo();
-    EPlaceType getCurPosition();
-    virtual bool isMovable();
-    void move(EPlaceType dst);
-}
+class Visitor: public APerson {
+protected:
+	int age;
+	bool ticket;
+public:
+	Visitor();
+	Visitor(string name, int sex, int age, bool ticket);
+
+	bool hasTicket();
+	int getAge();
+	void move(string action) override;
+	~Visitor();
+};
+
+#endif

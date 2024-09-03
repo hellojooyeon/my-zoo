@@ -1,62 +1,21 @@
-#include <iostream>
-#include <string>
+#include <iostream>;
+#include "person/employee.h";
+#include "person/visitor.h";
+#include "place/cage.h";
+#include "animal/animalElephant.h";
+#include "animal/animalShark.h";
+
 using namespace std;
-namespace MyZooNamespace
-{
-    enum EAnimal
-    {
-        ELEPHANT,
-        TIGER,
-        BEAR,
-        GIRAFFE,
-    };
-    class Animal
-    {
-    private:
-        EAnimal type;
-        int feedTime;
 
-    public:
-        Animal(EAnimal type, int feedTime);
-        EAnimal getAnimalType();
-    };
-    class Visitor
-    {
-    private:
-        int age;
-        bool attended;
+class Zoo {
+protected:
+	Employee* employees;
+	Visitor* visitors;
+	Cage* cages;
+public:
+	Zoo();
 
-    public:
-        Visitor(int age);
-        int getAge();
-        bool isAttended();
-    };
-    class Employee
-    {
-    private:
-        char *workspace;
+	void printInfo();
 
-    public:
-        Employee(char *workspace);
-        char *getWorkspace();
-    };
-    class ZooKeeper
-    {
-    private:
-        EAnimal animal;
-
-    public:
-        ZooKeeper(EAnimal animal);
-    };
-    class MyZoo
-    {
-    private:
-        int *customers;
-
-    public:
-        MyZoo();
-        MyZoo(int customerNums);
-        // todo: delete!
-        void print();
-    };
-}
+	~Zoo();
+};
