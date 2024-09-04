@@ -2,11 +2,11 @@
 
 
 Zoo::Zoo() {
-	// init employees
+	// init employees - 클래스 상속
 	const int employeeNums = 3;
 	employees = new Employee[employeeNums];
 
-	// init visitors
+	// init visitors - 클래스 상속
 	const int visitorNums = 10;	
 	visitors = new Visitor[visitorNums];
 
@@ -14,12 +14,13 @@ Zoo::Zoo() {
 	AnimalElephant elephant = AnimalElephant("sound11", 4);
 	AnimalShark shark = AnimalShark("sound22", 0);
 
-	// init cage
+	// init cage - 클래스 다형성
 	const int cageNums = 2;
 	cages = new Cage[cageNums]{
 		Cage("ELEPHANT", elephant, 10, "move11"),
 		Cage("SHARK", shark, 5, "move22")
 	};
+	//cages[1].updateSound(1, "abacasdfasd");
 }
 
 void Zoo::printInfo() {
@@ -42,21 +43,21 @@ void Zoo::printInfo() {
 	//cout << "현재 근로중인 직원 (명): " << working << endl;
 
 
-	// 동물 총 마리수 카운트
+	// 동물 총 마리수 카운트	
 	int animalNums = 0;
 	for (int index = 0;index < sizeof(cages); index++) {
 		animalNums += cages[index].countAnimals();
 	}
 	cout << "All Animals " << animalNums << endl;
 
-	// 동물 울음소리
+	// 동물 울음소리 - 오버라이드
 	cout << "============================== Start Animal Sound Start ============================== " << endl;
 	for (int index = 0;index < 2; index++) {
 		cout << "cage #" << index+1 << " start" << endl;
 		cages[index].soundAnimals();
 	}
 
-	// 동물 move
+	// 동물 move - 오버라이드
 	cout << "============================== Start Animal Move Start ============================== " << endl;
 	for (int index = 0;index < 2; index++) {
 		cout << "cage #" << index + 1 << " start" << endl;

@@ -14,10 +14,14 @@ protected:
 	string movingAction;
 	AAnimal* animals;
 public:
-	Cage(string name, AAnimal &animal, const int nums, const string movingAction);
+	Cage(string name, const AAnimal &animal, const int nums, const string movingAction);
 
 	int countAnimals();
 	void soundAnimals();
 	void moveAnimals();
+
+	void updateSound(int index, string newSound);
+
+	~Cage();
 };
 #endif

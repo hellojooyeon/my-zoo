@@ -9,11 +9,10 @@
 using namespace std;
 
 class AAnimal : public IMove {
-protected:
+public:
 	string name;
 	string sound;
 	int legNums;
-public:
 	AAnimal();
 	AAnimal(
 		string name,
