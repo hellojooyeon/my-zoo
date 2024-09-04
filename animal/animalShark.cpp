@@ -1,11 +1,11 @@
 #include "animalShark.h";
 
-AnimalShark::AnimalShark(int sex, string name, string sound, int legNums) : AAnimal(sex, name, sound, legNums) {};
+AnimalShark::AnimalShark(string sound, int legNums) : AAnimal("shark", sound, legNums) {};
 
 void AnimalShark::move(string action) {
-	cout << "Shark[" << name << "] 움직임: " << action << endl;
+	cout << "Shark[" << name << "] move: " << action << endl;
 };
 
 AnimalShark::~AnimalShark() {
-	cout << "AnimalShark 삭제" << endl;
+	cout << "AnimalShark deleted" << endl;
 }

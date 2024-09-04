@@ -11,22 +11,18 @@ using namespace std;
 class AAnimal : public IMove {
 protected:
 	string name;
-	int sex;
 	string sound;
 	int legNums;
 public:
 	AAnimal();
 	AAnimal(
-		int sex,
 		string name,
 		string sound,
 		int legNums
 		);
-
-	int getSex();
 	string getName();
-	string getSound();
 	int getLegNums();
+	string getSound();
 	void doSound();
 	virtual void move(string action) override;
 	~AAnimal();

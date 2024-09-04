@@ -4,6 +4,9 @@
 #include "place/cage.h";
 #include "animal/animalElephant.h";
 #include "animal/animalShark.h";
+#include <iostream>
+
+using namespace std;
 
 using namespace std;
 

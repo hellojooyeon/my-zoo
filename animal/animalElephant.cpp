@@ -1,11 +1,11 @@
 #include "animalElephant.h";
 
-AnimalElephant::AnimalElephant(int sex, string name, string sound, int legNums) : AAnimal(sex, name, sound, legNums) {};
+AnimalElephant::AnimalElephant(string sound, int legNums) : AAnimal("elephant", sound, legNums) {};
 
 void AnimalElephant::move(string action) {
-	cout << "Elephant[" << name << "] 움직임: " << action << endl;
+	cout << "Elephant[" << name << "] move: " << action << endl;
 };
 
 AnimalElephant::~AnimalElephant() {
-	cout << "AnimalElephant 삭제" << endl;
+	cout << "AnimalElephant deleted" << endl;
 }

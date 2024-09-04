@@ -2,16 +2,22 @@
 #define CAGE_H
 
 #include "../animal/animal.h";
+#include <iostream>
+
+using namespace std;
+
 
 class Cage {
 protected:
+	int nums;
+	string name;
+	string movingAction;
 	AAnimal* animals;
 public:
-	Cage();
-	Cage(AAnimal* animals);
+	Cage(string name, AAnimal &animal, const int nums, const string movingAction);
 
-	void addAnimals(AAnimal* animals);
-	bool isAnimalsIn();
 	int countAnimals();
+	void soundAnimals();
+	void moveAnimals();
 };
 #endif

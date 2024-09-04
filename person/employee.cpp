@@ -12,19 +12,19 @@ bool Employee::getIsWorking() {
 }
 
 void Employee::startWork() {
-	cout << "Worker " << name << " 이(가) "<< job<<" 을(를) 시작합니다." << endl;
+	cout << "Employee " << name << " starts to work: "<< job << endl;
 	isWorking = true;
 }
 
 void Employee::stopWork() {
-	cout << "Worker " << name << " 이(가) 업무를 중지합니다." << endl;
+	cout << "Worker " << name << " stops working" << endl;
 	isWorking = false;
 }
 
 void Employee::move(string action) {
-	cout << "Employee [" << name << "] 움직임: " << action << endl;
+	cout << "Employee [" << name << "] move: " << action << endl;
 }
 
 Employee::~Employee() {
-	cout << "Employee "<<job<<" 삭제" << endl;
+	cout << "~Employee "<<job<<" delete" << endl;
 }
